@@ -2,11 +2,29 @@ Review Session Questions
 AWS/Pandas/SQL:
 
 (?, ?) Explain how to get Pandas up and running with data on an AWS server.
+
+1. Log into your AWS account and make sure the region option in the top right corner is the correct location.
+2. Click on EC2 in the top left area, that will you bring you to the EC2 dashboard. Click on “Launch Instance.”
+3. Choose Ubuntu Amazon Machine Image (AMI).
+4. Select instance type.
+5. Name your instance and a new security group.
+6. Create a new key pair if you don’t already one or if you prefer using a different one than your others.
+7. After creating the key pair, download its .pem file to your computer and place it in a folder; make the .pem file read only with the command chmod 400 [filename]
+8. Review your instance details and launch your instance.
+9. Retrieve the IP address from the EC2 dashboard and access it with:
+  ssh -i ~/.ssh/name_pem_file.pem ubuntu@ip address.
+10. Install ipython and pandas with apt-get:
+  sudo apt-get update
+  sudo apt-get install ipython python-pandas
+
 (?, ?) Explain data subsetting in pandas using, .iloc, .loc, and and boolean indexing therein.
-(?, ?) Show us your top 10 most useful commands in Pandas.
+(?, ?) Show us your top 10 most useful commands in Pandas.  
 (?, ?) Explain attaching (S3) storage to an AWS server and uploading data to it.
 (?, ?) Explain how to set up an SQL server on AWS.
 (?, ?) Explain subqueries and the use of temporary tables.
+
+
+
 (?, ?) Compare group by syntax between Pandas and SQL, highlighting the difference between associated SQL where clauses and having clauses.
 (?, ?) Explain the types of joins in SQL (inner, outer, left, right) and compare join syntax between Pandas and SQL.
 Probability/Statistics/(A/B)Testing/Bayesian Analysis:
